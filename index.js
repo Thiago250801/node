@@ -20,7 +20,7 @@ const herois = ["Mulher Maravilha", "Batman", "Homem Aranha"];
 //readAll -> GET
 
 app.get('/herois', function(req, res){
-    res.send(herois);
+    res.send(herois.filter(Boolean));
 })
 
 //create -> POST
