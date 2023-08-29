@@ -29,9 +29,17 @@ app.post('/herois', function (req, res){
     //console.log(req.body, typeof req.body);
     const item = req.body.nome;
     herois.push(item)
-    res.send("Criar registro");
+    res.send("Item criado com sucesso");
 })
 
+
+//Read By id -> GET /herois/:id
+app.get('/herois/:id', function(req, res){
+    const id = req.params.id - 1;
+    const item = herois[id]
+
+    res.send(item);
+})
 app.listen(3000);
 
 
