@@ -51,6 +51,15 @@ app.put('/herois/:id', function(req, res){
     res.send("Item editado com sucesso");
 })
 
+// Delete -> DELETE
+app.delete("/herois/:id", function(req, res){
+    const id = req.params.id - 1;
+    
+    delete herois[id]
+
+    res.send("Item excluído com sucesso")
+})
+
 
 app.listen(3000);
 
