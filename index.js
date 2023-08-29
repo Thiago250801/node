@@ -1,6 +1,9 @@
 const express = require('express');
 const app = express();
 
+// Habilitamos o processamento de json
+app.use(express.json())
+
 // Endpoint principal
 app.get("/", function (req, res){
     res.send("Hello world");
@@ -23,6 +26,9 @@ app.get('/herois', function(req, res){
 //create -> POST
 
 app.post('/herois', function (req, res){
+    //console.log(req.body, typeof req.body);
+    const item = req.body.nome;
+    herois.push(item)
     res.send("Criar registro");
 })
 
