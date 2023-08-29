@@ -40,6 +40,18 @@ app.get('/herois/:id', function(req, res){
 
     res.send(item);
 })
+
+// Update -> PUT /herois/:id
+app.put('/herois/:id', function(req, res){
+    const id = req.params.id - 1;
+    const item = req.body.nome;
+
+    herois[id] = item;
+
+    res.send("Item editado com sucesso");
+})
+
+
 app.listen(3000);
 
 
